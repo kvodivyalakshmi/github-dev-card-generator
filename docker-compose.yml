@@ -1,0 +1,41 @@
+<<<<<<< HEAD
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - backend/.env
+    # For local development, we can mount the volume to see changes
+    # volumes:
+    #   - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    environment:
+      - BACKEND_URL=http://localhost:8080
+    depends_on:
+      - backend
+=======
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - backend/.env
+    # For local development, we can mount the volume to see changes
+    # volumes:
+    #   - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    environment:
+      - BACKEND_URL=http://localhost:8080
+    depends_on:
+      - backend
+>>>>>>> ca62818c2cbc4fc30133a98cc1f0a41ad4186545
